@@ -14,5 +14,10 @@ pipeline {
         sh 'docker build -t $IMAGE_NAME:$IMAGE_TAG .'
       }
     }
+    stage('Start') {
+      steps {
+        sh 'docker run -e PORT="80" -p "80:80" silinfo/jenkins-example-react'
+      }
+    }
   }
 }
