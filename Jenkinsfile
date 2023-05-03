@@ -16,7 +16,7 @@ pipeline {
     }
     stage('Start') {
       steps {
-        sh 'docker run -e PORT="80" -p "80:80" silinfo/jenkins-example-react'
+        sh 'docker run -d -e PORT="80" -p "80:80" silinfo/jenkins-example-react'
       }
     }
   }
