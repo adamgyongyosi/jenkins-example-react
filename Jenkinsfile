@@ -16,7 +16,7 @@ pipeline {
     }
     stage('Docker stop') {
       steps {
-        sh 'docker stop react'
+        sh 'docker stop react || true && docker rm react || true'
       }
     }
     stage('Docker start') {
