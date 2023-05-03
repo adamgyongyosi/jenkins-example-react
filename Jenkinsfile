@@ -14,12 +14,12 @@ pipeline {
         sh 'docker build -t $IMAGE_NAME:$IMAGE_TAG .'
       }
     }
-    stage('Start') {
+    stage('Docker stop') {
       steps {
         sh 'docker stop react'
       }
     }
-    stage('Start') {
+    stage('Docker start') {
       steps {
         sh 'docker run -d -e PORT="80" -p "80:80" --name "react" silinfo/jenkins-example-react'
       }
